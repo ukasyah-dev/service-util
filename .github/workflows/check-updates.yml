@@ -1,0 +1,14 @@
+name: Check updates
+
+on:
+  schedule:
+    - cron: "21 20 1 * *"
+  workflow_dispatch:
+
+jobs:
+  check:
+    uses: ukasyah-dev/actions/.github/workflows/check-cargo-updates.yml@main
+    permissions:
+      contents: read
+      pull-requests: write
+    secrets: inherit
